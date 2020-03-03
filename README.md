@@ -5,3 +5,6 @@ Projects based on [App Ideas Collection](https://github.com/florinpop17/app-idea
 
 | Name                                | Short Description                             | Link to preview                       |
 | ----------------------------------- | --------------------------------------------- | ------------------------------------- |
+| [Bin2Dec](./Tier1/Bin2Dec)          |  Binary-to-Decimal and Decimal-to-Binary      |                                       |
+|                                     |  number converter                             |                                       |
+| ----------------------------------- | --------------------------------------------- | ------------------------------------- |
