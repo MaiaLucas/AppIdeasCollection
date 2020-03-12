@@ -9,13 +9,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.16.1
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.16.0
+
 
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 flutter:
 

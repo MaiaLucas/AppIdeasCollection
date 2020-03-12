@@ -4,6 +4,8 @@ import 'package:expenses/components/chart.dart';
 import 'package:expenses/components/transactionForm.dart';
 import 'package:expenses/components/transactionList.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'models/transaction.dart';
 
@@ -12,8 +14,20 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.deepPurple,
+      systemNavigationBarColor: Color(0xFF212121) 
+      )
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      supportedLocales: [
+        const Locale('pt', 'BR')
+      ],
+      localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
       home: MyHomePage(),
       theme: ThemeData(
         brightness: Brightness.light,
@@ -78,6 +92,26 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop();
   }
 
+  _editTransaction(String title, double value, DateTime date) {
+
+    print('$title - $value - $date');
+    setState(() {
+    });
+    Navigator.of(context).pop();
+  }
+
+  double get _weekTotalValue {
+    return _transactions.fold(0.0, (sum, tr) {
+      return sum + tr.value;
+    });
+  }
+  
+  void _removeTransaction(String id) {
+    setState(() {
+      _transactions.removeWhere((tr) => tr.id == id );
+    });
+  }
+
   _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
         context: context,
@@ -103,7 +137,30 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Chart(_recentTransactions),
-            TransactionList(_transactions),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text(
+                    _weekTotalValue > 0 ? 'Total: ' : '',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  Text(
+                    _weekTotalValue > 0 ?' - R\$ ${_weekTotalValue.toStringAsFixed(2)}' : 'Sem despesas',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.redAccent,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(height: 5,),
+            TransactionList(_transactions, _removeTransaction, _editTransaction),
           ],
         ),
       ),
@@ -111,7 +168,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
         onPressed: () => _openTransactionFormModal(context),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
