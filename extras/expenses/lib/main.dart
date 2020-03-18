@@ -1,4 +1,5 @@
 
+import 'package:expenses/components/home.dart';
 import 'package:expenses/components/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -49,7 +50,7 @@ class ExpensesApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Wrapper(),
+      home: MyHomePage(),
     );
   }
 }

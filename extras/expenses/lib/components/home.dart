@@ -39,23 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).pop();
   }
 
-  _editTransaction(String title, double value, DateTime date) {
-
-    print('$title - $value - $date');
-    setState(() {
-    });
-    Navigator.of(context).pop();
-  }
-
-  double get _weekTotalValue {
-    return _transactions.fold(0.0, (sum, tr) {
-      return sum + tr.value;
-    });
-  }
-  
   void _removeTransaction(String id) {
     setState(() {
-      _transactions.removeWhere((tr) => tr.id == id );
+      _transactions.removeWhere((tr) => tr.id == id);
     });
   }
 
@@ -69,45 +55,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
+    final appBar = AppBar(
+      title: Text('Despesas pessoais'),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.add),
+          onPressed: () => _openTransactionFormModal(context),
+        ),
+      ],
+    );
+    final availableHeight = MediaQuery.of(context).size.height 
+    - appBar.preferredSize.height
+    - MediaQuery.of(context).padding.top;
+    
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Despesas pessoais'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            onPressed: () => _openTransactionFormModal(context),
-          ),
-        ],
-      ),
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Chart(_recentTransactions),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                    _weekTotalValue > 0 ? 'Total: ' : '',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  Text(
-                    _weekTotalValue > 0 ?' - R\$ ${_weekTotalValue.toStringAsFixed(2)}' : 'Sem despesas',
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.redAccent,
-                    ),
-                  ),
-                ],
-              ),
+            Container(
+              height: availableHeight * 0.35,
+              child: Chart(_recentTransactions),
             ),
-            Divider(height: 5,),
-            TransactionList(_transactions, _removeTransaction, _editTransaction),
+            Container(
+              height: availableHeight * 0.65,
+              child: TransactionList(
+                  _transactions, _removeTransaction),
+            ),
           ],
         ),
       ),
