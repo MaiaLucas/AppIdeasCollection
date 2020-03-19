@@ -58,12 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
     
     final appBar = AppBar(
       title: Text('Despesas pessoais'),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () => _openTransactionFormModal(context),
-        ),
-      ],
     );
     final availableHeight = MediaQuery.of(context).size.height 
     - appBar.preferredSize.height
@@ -76,11 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              height: availableHeight * 0.35,
+              height: availableHeight * 0.30,
               child: Chart(_recentTransactions),
             ),
             Container(
-              height: availableHeight * 0.65,
+              height: availableHeight * 0.70,
               child: TransactionList(
                   _transactions, _removeTransaction),
             ),

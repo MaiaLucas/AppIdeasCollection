@@ -44,13 +44,29 @@ class _TransactionListState extends State<TransactionList> {
 
               return Dismissible(
                 key: Key(tr.id),
+                direction: DismissDirection.endToStart,
                 onDismissed: (direction) {
                   widget.onRemove(tr.id);
                 },
-                background: Container(
-                  color: Theme.of(context).errorColor,
-                  height: 10,
-                  width: 10,
+
+                background: Padding(
+                  padding: const EdgeInsets.all(3),
+                  child: Container(
+                    alignment: AlignmentDirectional.centerEnd,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(5),
+                      ),
+                      color: Colors.redAccent
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: const Icon(
+                        Icons.delete_outline,
+                        size: 30,
+                      ),
+                    ),
+                  ),
                 ),
                 child: Card(
                   elevation: 5,
@@ -59,27 +75,9 @@ class _TransactionListState extends State<TransactionList> {
                     horizontal: 5,
                   ),
                   child: ListTile(
-                    leading: Text('R\$${tr.value}'),
                     dense: true,
                     onLongPress: () {
-                      showDialog(
-                        context: context,
-                        child: AlertDialog(
-                          title: Text('Edição?!'),
-                          content: Text('Deseja editar a transação (${tr.title})?!'),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('No'),
-                              onPressed: () {print('context');},
-                            ),
-                            FlatButton(
-                              child: Text('Yes'),
-                              onPressed: () => print('edit'),
-                            ),
-                          ],
-                          elevation: 25,
-                        )
-                      );
+                      print('ok');
                     },
                     title: Text(
                       tr.title,
@@ -87,11 +85,13 @@ class _TransactionListState extends State<TransactionList> {
                     ),
                     subtitle: Text(
                       DateFormat('d MMM y', "pt_BR").format(tr.date),
+                      style: TextStyle(color: Colors.white70),
                     ),
-                    trailing: IconButton(
-                      icon: Icon(Icons.arrow_back_ios),
-                      color: Theme.of(context).errorColor,
-                      onPressed: () {},
+                    trailing: Text(
+                      'R\$${tr.value.toStringAsFixed(2)}',
+                      style: TextStyle(
+                        color: Theme.of(context).accentColor,
+                      ),
                     ),
                   ),
                 ),

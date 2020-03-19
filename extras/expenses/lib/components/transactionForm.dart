@@ -18,7 +18,6 @@ class _TransactionFormState extends State<TransactionForm> {
   _submitForm() {
     final title = _titleController.text;
     final value = double.tryParse(_valueController.text) ?? 0.0;
-
     if (title.isEmpty || value <= 0 || _selectedDate == null) return;
 
     widget.onSubmit(title, value, _selectedDate);
@@ -66,18 +65,18 @@ class _TransactionFormState extends State<TransactionForm> {
                       _selectedDate == null
                           ? 'Nenhuma data selecionada!'
                           : 'Data Selecionada: ${DateFormat('dd/MM/y', 'pt_BR').format(_selectedDate)}',
-                    ),
-                  ),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text(
-                      'Selecionar Data',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20
                       ),
                     ),
-                    onPressed: _showDatePicker,
-                  )
+                  ),
+                  FloatingActionButton(
+                    backgroundColor: Theme.of(context).accentColor,
+                    child: Icon(
+                      Icons.calendar_today,
+                      ),
+                    onPressed: _showDatePicker
+                  ),
                 ],
               ),
             ),

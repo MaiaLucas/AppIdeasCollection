@@ -65,10 +65,7 @@ class _ChartState extends State<Chart> {
           children: <Widget>[
             Text(
               '$_week',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-              ),
+              style: Theme.of(context).textTheme.title,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

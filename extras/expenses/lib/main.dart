@@ -25,15 +25,16 @@ class ExpensesApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate
         ],
       theme: ThemeData(
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
         primarySwatch: Colors.deepPurple,
-        accentColor: Colors.amber,
+        accentColor: Colors.redAccent,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               title: TextStyle(
                 fontFamily: 'OpenSans',
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
+                color: Colors.white
               ),
               button: TextStyle(
                 color: Colors.white,

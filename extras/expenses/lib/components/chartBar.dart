@@ -15,17 +15,22 @@ class ChartBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (ctx, constraints) {
+        double height = constraints.maxHeight;
+
         return Column(
           children: <Widget>[
             Container(
-              height: constraints.maxHeight * 0.15,
+              height: 20,
               child: FittedBox(
-                child: Text('${value.toStringAsFixed(2)}'),
+                child: Text(
+                  '${value.toStringAsFixed(2)}',
+                  style: Theme.of(context).textTheme.title,
+                ),
               ),
             ),
-            SizedBox(height: constraints.maxHeight * 0.05),
+            SizedBox(height: 5),
             Container(
-              height: constraints.maxHeight * 0.6,
+              height: 70,
               width: 10,
               child: Stack(
                 alignment: Alignment.bottomCenter,
@@ -43,16 +48,16 @@ class ChartBar extends StatelessWidget {
                     heightFactor: percentage,
                     child: Container(
                       decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).accentColor,
                           borderRadius: BorderRadius.circular(5)),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: constraints.maxHeight * 0.05),
+            SizedBox(height: 5),
             Container(
-              height: constraints.maxHeight * 0.15,
+              height: 20,
               child: FittedBox(
                 child: Text(label),
               ),
