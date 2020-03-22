@@ -1,6 +1,14 @@
 ## :ledger: AppIdeasCollection
 Projects based on [App Ideas Collection](https://github.com/florinpop17/app-ideas) by [Florin Pop](https://github.com/florinpop17)
 
+### Extras
+
+| Name                                | Short Description                                            | Link to preview                  |
+| ----------------------------------- | ------------------------------------------------------------ | -------------------------------- |
+| [Expenses](./extras/expenses)       |  Personal Expenses Manager                                   |                                  |
+| [Meals App](./tier1/meals_app)      |  Meals and Recepes App                                       |                                  |
+
+
 ### Tier-1: Beginner Projects
 
 | Name                                | Short Description                                            | Link to preview                  |
