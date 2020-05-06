@@ -1,0 +1,9 @@
+<body>
+  <div class="title">{{title}}</div>
+  <div class="search">
+    <input type="search" name="" id="search_input" placeholder="{{placeholderSearch}}"  #box (keyup.enter)="submit(box.value)" />
+
+    <input type="submit" value="Search" id="search_button" (click)="submit(box.value)" />
+  </div>
+  
+</body>
