@@ -8,10 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { ConfigService } from './config/config.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { BooksListComponent } from './books-list/books-list.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BooksListComponent,
+    SearchPageComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
