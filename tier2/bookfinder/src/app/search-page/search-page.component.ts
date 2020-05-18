@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { BookInfo } from '../model/list.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-page',
@@ -10,18 +11,16 @@ import { BookInfo } from '../model/list.model';
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor(private http: HttpClient, private config: ConfigService) { }
+  constructor(private http: HttpClient, private config: ConfigService, private router: Router) { }
   title             = 'Book Finder';
   placeholderSearch = 'Search for your favorite book here';
   showList          = false;
   listBooks: BookInfo[];
-  
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
+  ngOnInit(): void { }
 
   submit(value: string) {
+
     if (value === '') {
       alert('Please search for available book');
       return;
@@ -31,7 +30,11 @@ export class SearchPageComponent implements OnInit {
     .subscribe(info => {
       this.listBooks = info;
     });
-    this.showList = true;
+    // this.showList = true;
+
+
+    this.router.navigate(['/book'], {queryParams: {title: this.title, list: this.listBooks}});
   }
+
 
 }

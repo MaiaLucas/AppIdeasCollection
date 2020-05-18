@@ -10,14 +10,14 @@ import { ConfigService } from './config/config.service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BooksListComponent } from './books-list/books-list.component';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { AboutComponent } from './about/about.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksListComponent,
     SearchPageComponent,
-    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +25,11 @@ import { AboutComponent } from './about/about.component';
     MatSliderModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgbModule,
+    RouterModule.forRoot([
+      { path: '', component: SearchPageComponent },
+      { path: 'book', component: BooksListComponent },
+    ])
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

@@ -6,9 +6,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent },
-  { path: 'books', component: BooksListComponent, data: { animation: 'isLeft' } },
-  { path: 'search', component: SearchPageComponent, data: { animation: 'isRight' } },
+  { path: 'book', component: BooksListComponent },
 ];
 
 @NgModule({

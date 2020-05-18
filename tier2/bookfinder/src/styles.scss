@@ -6,6 +6,101 @@
 }
 
 main {
-  text-align: center;
+  border: 2px solid pink;
+  // text-align: center;
   position: relative;
 }
+
+body { 
+  margin: 0; 
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  background: url("./assets/ancient-antique-architectural.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+// CLASSES
+.title {
+  font-weight: bolder;
+  font-size: 144px;
+  line-height: 216px;
+
+  text-align: center;
+  color: #F9F9F9;
+}
+
+.search {
+  display: flex;
+  margin: 2vh;
+
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+  border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  background-color: #F5F5F5;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, #FDC674),
+    color-stop(0.72, #FDC674),
+    color-stop(0.86, #FDC674)
+  );
+}
+
+// ID
+
+.search #search_input {
+  width: 100vh;
+  padding: 12px 20px;
+  margin: 0 auto 1vh;
+
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #000000;
+  border-radius: 50px;
+
+  font-style: normal;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #000000;
+}
+
+.search  #search_button {
+  width: 25vh;
+  height: 60px;
+  align-self: center;
+
+  // mix-blend-mode: saturation;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.55);
+  border-radius: 50px;
+  border: none;
+
+  background: #FDC674;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #000;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
