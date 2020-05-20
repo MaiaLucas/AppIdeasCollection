@@ -5,20 +5,22 @@
   box-sizing: border-box;
 }
 
-main {
-  border: 2px solid pink;
-  // text-align: center;
-  position: relative;
-}
-
 body { 
   margin: 0; 
   padding: 0;
   height: 100vh;
   display: flex;
+  justify-content: center;
   background: url("./assets/ancient-antique-architectural.jpg");
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.main {
+  // border: 2px solid pink;
+  text-align: center;
+  position: relative;
+  
 }
 
 // CLASSES
@@ -68,7 +70,8 @@ body {
 .search #search_input {
   width: 100vh;
   padding: 12px 20px;
-  margin: 0 auto 1vh;
+  // margin: 0 auto 1vh;
+  position: relative;
 
   background: rgba(255, 255, 255, 0.7);
   border: 2px solid #000000;
