@@ -19,7 +19,7 @@ export class ConfigService {
       params = new HttpParams().append('q', search);
     }
 
-    this.http.get<BookInfo[]>(`https://www.googleapis.com/books/v1/volumes?`, {params: params})
+    this.http.get<BookInfo[]>(`https://www.googleapis.com/books/v1/volumes?`, {params})
     .subscribe(volume => {
       volume['items'].map(info => {
         console.log(info.volumeInfo);
@@ -30,10 +30,12 @@ export class ConfigService {
           Title: info.volumeInfo.title,
           Author: info.volumeInfo.authors,
           Description: info.volumeInfo.description,
-          imagePath: info.volumeInfo.imageLinks === undefined ? '../../assets/generic_book.jpg' : info.volumeInfo.imageLinks.thumbnail , // info.volumeInfo.imageLinks.thumbnail
+          imagePath: info.volumeInfo.imageLinks === undefined
+          ? '../../assets/generic_book.jpg'
+          : info.volumeInfo.imageLinks.thumbnail , // info.volumeInfo.imageLinks.thumbnail
           PublishedDate: publishedDate,
           FullDate: date.length > 1 ? true : false,
-          // Link: 
+          // Link:
         });
       });
     });

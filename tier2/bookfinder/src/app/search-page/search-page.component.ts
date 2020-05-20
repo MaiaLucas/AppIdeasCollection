@@ -26,14 +26,8 @@ export class SearchPageComponent implements OnInit {
       return;
     }
     this.listBooks = [];
-    this.config.findBookList(value)
-    .subscribe(info => {
-      this.listBooks = info;
-    });
-    // this.showList = true;
+    this.router.navigate(['/book'], { queryParams: { queryString: value } });
 
-
-    this.router.navigate(['/book'], {queryParams: {title: this.title, list: this.listBooks}});
   }
 
 
