@@ -1,8 +1,25 @@
-<div class="main">
-  <div class="title">{{title}}</div>
-  <div class="search">
-    <input type="search" value="" id="search_input" placeholder="{{placeholderSearch}}"  #box (keyup.enter)="submit(box.value)" />
+<div class="search">
+  <input type="search" value="" id="search_input" placeholder="{{placeholderSearch}}"  #box (keyup.enter)="submit(box.value)" />
 
-    <input type="submit" value="Search" id="search_button" (click)="submit(box.value)" />
-  </div>
+  <input type="submit" value="Search" id="search_button" (click)="submit(box.value)" />
+
+</div>
+<div class="content" *ngIf="show">
+  <nav class="list" *ngFor="let book of listBooks">
+    <div class="book">
+      <h3>{{book.Title}}</h3>
+      <div class="book-content">
+        <img src="{{book.imagePath}}" alt="" >
+        <ul>
+          <li><strong>Description:</strong><br/> {{book.Description}}</li>
+          <li>
+            <div class="author">{{book.Author}}</div>
+            <div class="date" *ngIf="book.FullDate;">{{book.PublishedDate | date:'MMMM d, y':'GMT'}}</div>
+            <div class="date" *ngIf="!book.FullDate">{{book.PublishedDate}}</div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
 </div>

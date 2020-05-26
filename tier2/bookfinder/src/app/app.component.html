@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<header class="nav">
+  <h1 (click)="back()">BookFinder</h1>
+</header>
+
+<main class="body-view">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bottom">
+  <a href="https://github.com/MaiaLucas/" target="_blank" rel="noopener noreferrer"> 
+    Would you like a cup of coffee? 
+    <fa-icon [icon]="faCoffee"></fa-icon>
+  </a> 
+</footer>

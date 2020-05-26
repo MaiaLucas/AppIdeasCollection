@@ -7,16 +7,15 @@ import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { ConfigService } from './config/config.service';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { BooksListComponent } from './books-list/books-list.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent,
     SearchPageComponent,
   ],
   imports: [
@@ -26,12 +25,16 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
+    FontAwesomeModule,
     RouterModule.forRoot([
       { path: '', component: SearchPageComponent },
-      { path: 'book', component: BooksListComponent },
     ])
   ],
-  providers: [ConfigService],
+  providers: [ConfigService, {
+    provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

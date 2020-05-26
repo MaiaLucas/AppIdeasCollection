@@ -1,109 +1,166 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 * {
-  font-family: 'Poppins', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
-body { 
-  margin: 0; 
-  padding: 0;
+body {
   height: 100vh;
+  margin: 0px;
+  display: grid;
+  grid-template-rows: 120px 1fr 60px;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "cabecalho" 
+  "principal" 
+  "rodape";
+}
+
+a {
   display: flex;
-  justify-content: center;
-  background: url("./assets/ancient-antique-architectural.jpg");
-  background-repeat: no-repeat;
-  background-size: auto;
+  text-decoration: none;
+  color: #222;
 }
 
-.main {
-  // border: 2px solid pink;
-  text-align: center;
-  position: relative;
-  
-}
-
-// CLASSES
-.title {
-  font-weight: bolder;
-  font-size: 144px;
-  line-height: 216px;
-
-  text-align: center;
-  color: #F9F9F9;
-}
-
-.search {
+.nav {
+  grid-area: cabecalho;
+  background-color: #673AB7;
+  color: white;
   display: flex;
-  margin: 2vh;
-
-  flex-wrap: wrap;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
+  padding-bottom: 10px;
+  z-index: 1;
+  box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75);
 }
 
-.scrollbar::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #F5F5F5;
-  border-radius: 5px;
+.nav > h1 {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 2.8rem;
 }
 
-.scrollbar::-webkit-scrollbar {
-  width: 5px;
-  background-color: #F5F5F5;
+
+.body-view {
+  grid-area: principal;
+  height: calc(116vh - 175px);
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 
-.scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.44, #FDC674),
-    color-stop(0.72, #FDC674),
-    color-stop(0.86, #FDC674)
-  );
+.bottom {
+  grid-area: rodape;
+  background-color: #CFD8DC;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-right: 20px;
+  color: #444;
+  /* position: sticky;
+  bottom: 0px; */
 }
 
-// ID
 
-.search #search_input {
-  width: 100vh;
-  padding: 12px 20px;
-  // margin: 0 auto 1vh;
-  position: relative;
 
-  background: rgba(255, 255, 255, 0.7);
-  border: 2px solid #000000;
-  border-radius: 50px;
+// body { 
+//   margin: 0; 
+//   padding: 0;
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   // background: url("./assets/ancient-antique-architectural.jpg");
+//   background-repeat: no-repeat;
+//   background-size: auto;
+// }
 
-  font-style: normal;
-  font-weight: 100;
-  font-size: 24px;
-  line-height: 36px;
+// .main {
+//   // border: 2px solid pink;
+//   text-align: center;
+//   position: relative;
+  
+// }
 
-  color: #000000;
-}
+// // CLASSES
+// .title {
+//   font-weight: bolder;
+//   font-size: 144px;
+//   line-height: 216px;
 
-.search  #search_button {
-  width: 25vh;
-  height: 60px;
-  align-self: center;
+//   text-align: center;
+//   color: #F9F9F9;
+// }
 
-  // mix-blend-mode: saturation;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.55);
-  border-radius: 50px;
-  border: none;
+// .search {
+//   display: flex;
+//   margin: 2vh;
 
-  background: #FDC674;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 36px;
+//   flex-wrap: wrap;
+//   flex-direction: column;
+//   align-content: center;
+// }
 
-  color: #000;
-}
+// .scrollbar::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//   background-color: #F5F5F5;
+//   border-radius: 5px;
+// }
 
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+// .scrollbar::-webkit-scrollbar {
+//   width: 5px;
+//   background-color: #F5F5F5;
+// }
+
+// .scrollbar::-webkit-scrollbar-thumb {
+//   border-radius: 5px;
+//   background-image: -webkit-gradient(
+//     linear,
+//     left bottom,
+//     left top,
+//     color-stop(0.44, #FDC674),
+//     color-stop(0.72, #FDC674),
+//     color-stop(0.86, #FDC674)
+//   );
+// }
+
+// // ID
+
+// .search #search_input {
+//   width: 100vh;
+//   padding: 12px 20px;
+//   // margin: 0 auto 1vh;
+//   position: relative;
+
+//   background: rgba(255, 255, 255, 0.7);
+//   border: 2px solid #000000;
+//   border-radius: 50px;
+
+//   font-style: normal;
+//   font-weight: 100;
+//   font-size: 24px;
+//   line-height: 36px;
+
+//   color: #000000;
+// }
+
+// .search  #search_button {
+//   width: 25vh;
+//   height: 60px;
+//   align-self: center;
+
+//   // mix-blend-mode: saturation;
+//   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.55);
+//   border-radius: 50px;
+//   border: none;
+
+//   background: #FDC674;
+//   font-family: 'Poppins';
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 24px;
+//   line-height: 36px;
+
+//   color: #000;
+// }
+

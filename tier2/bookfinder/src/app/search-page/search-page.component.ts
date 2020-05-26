@@ -12,9 +12,8 @@ import { Router } from '@angular/router';
 export class SearchPageComponent implements OnInit {
 
   constructor(private http: HttpClient, private config: ConfigService, private router: Router) { }
-  title             = 'Book Finder';
   placeholderSearch = 'Search for your favorite book here';
-  showList          = false;
+  show              = false;
   listBooks: BookInfo[];
 
   ngOnInit(): void { }
@@ -26,8 +25,11 @@ export class SearchPageComponent implements OnInit {
       return;
     }
     this.listBooks = [];
-    this.router.navigate(['/book'], { queryParams: { queryString: value } });
-
+    this.config.findBookList(value)
+    .subscribe(info => {
+      this.listBooks = info;
+    });
+    this.show = true;
   }
 
 
