@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700;900&display=swap');
 
 .App {
   font-family: 'Poppins', sans-serif;
@@ -23,7 +23,9 @@ header {
 
 .conteudo {
   height: calc(108vh - 180px);
+  /* height: 100%; */
   background-color: #f0f0f0;
+  overflow-y: scroll;
 }
 
 .rodape {
@@ -37,4 +39,21 @@ header {
   color: #444;
   /* position: sticky;
   bottom: 0px; */
+}
+
+
+.copyright {
+  padding: 8px 8px 0px 0px;
+  font-size: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recipe-create {
+  font-weight: 700;
+  color: #F79D65;
+}
+
+.teste {
+  background-color: #F79D65;
 }

@@ -1,0 +1,124 @@
+{
+    "recipes": [
+        {   
+            "id": 1,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        },
+        {   
+            "id": 2,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        },
+        {   
+            "id": 3,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        },
+        {   
+            "id": 4,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        },
+        {   
+            "id": 5,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        },
+        {   
+            "id": 6,
+            "title": "Chocolate Cake",
+            "description": "It's delicious",
+            "recipeImage": "https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?cs=srgb&dl=alimento-bolo-bolo-de-chocolate-bolo-pecaminoso-132694.jpg&fm=jpg",
+            "ingredients": {
+                "1": "Sugar, 2 cups",
+                "2": "Butter, 150g",
+                "3": "Chocolate, 200g",
+                "4": "2 eggs",
+                "5": "Milk, 1 cup",
+                "6": "Flour, 2 cups"
+            },
+            "steps": {
+                "1": "Mix we ingredients",
+                "2": "add dry ingredients",
+                "3": "pour in a loaf tin",
+                "4": "bake 40 min. 180 C"
+            }
+        }
+    ]
+}

@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './About/About';
 import Meals from './Meals/Meals';
 import Home from './Home/Home';
+import ShowRecipes from './Recipe/ShowRecipes';
+import CreateRecipes from './Recipe/CreateRecipe';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/meals" component={Meals} />
+            <Route path="/recipe" exact component={ShowRecipes} />
+            <Route path="/recipe/create" exact component={CreateRecipes} />
           </Switch>
         </div>
         <Footer />
